@@ -1,4 +1,4 @@
-import { createApp } from '@vue/compat';
+import { createApp } from 'vue';
 import BootstrapVue from 'bootstrap-vue';
 import App from './App.vue'
 
