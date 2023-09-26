@@ -43,7 +43,11 @@ describe('Table Component', () => {
 		// Assert that the b-table component is displayed and contains data
 		cy.get('table').should('be.visible');
 		cy.get('tbody tr').should('have.length', 3); // Assuming 3 mock items
-		cy.get('tbody tr:first-child td:first-child').should('contain', 'Mock Item 1');
+		cy.get('tbody tr:first-child td:first-child').should('contain', '1');
 		cy.get('tbody tr:last-child td:last-child').should('contain', '30');
+
+		["Item 1", "Item 2", "Item 3"].forEach((testCase) => {
+			cy.get("#client-reports").should("contain.text", testCase);
+		});
 	});
 });

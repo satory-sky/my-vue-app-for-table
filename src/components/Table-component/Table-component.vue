@@ -5,7 +5,7 @@
   </div>
 
   <div>
-    <b-table striped hover :items="tableData"></b-table>
+    <b-table striped hover id="client-reports" :items="tableData"></b-table>
   </div>
 </template>
 
