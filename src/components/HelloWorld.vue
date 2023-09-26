@@ -32,10 +32,14 @@
   <div>
     <Table-component/>
   </div>
+  <div>
+    <Simple-table-component/>
+  </div>
 </template>
 
 <script>
 import TableComponent from "@/components/Table-component/Table-component.vue";
+import SimpleTableComponent from "@/components/Simple-table-component/Simple-table-component.vue";
 
 export default {
   name: 'HelloWorld',
@@ -43,6 +47,7 @@ export default {
     msg: String
   },
   components: {
+    SimpleTableComponent,
     TableComponent
   }
 }

@@ -1,13 +1,13 @@
-import TableComponent from "./Table-component.vue";
+import SimpleTableComponent from "./Simple-table-component.vue";
 import { mount } from "cypress/vue";
 
-describe('Table Component', () => {
+describe('Simple Table Component', () => {
 	beforeEach(() => {
 		// Visit the Vue app URL where your component will be mounted
 		// cy.visit('/');
 	});
 
-	it('displays the component with mock data', () => {
+	it('Loads Simple Report table', () => {
 		// Define global configuration options for cy.mount
 		const mountOptions = {
 			global: {
@@ -21,7 +21,7 @@ describe('Table Component', () => {
 		};
 
 		// Mount the Vue component with mock data and global options
-		mount(TableComponent, {
+		mount(SimpleTableComponent, {
 			data() {
 				return {
 					title: 'Mock Title',
@@ -40,10 +40,8 @@ describe('Table Component', () => {
 		cy.get('h1').should('contain', 'Mock Title');
 		cy.get('p').should('contain', 'Mock Message');
 
-		// Assert that the b-table component is displayed and contains data
-		cy.get('table').should('be.visible');
-		cy.get('tbody tr').should('have.length', 3); // Assuming 3 mock items
-		cy.get('tbody tr:first-child td:first-child').should('contain', 'Mock Item 1');
-		cy.get('tbody tr:last-child td:last-child').should('contain', '30');
+		["ValY", "Val_B"].forEach((testCase) => {
+			cy.get("#simple-client-reports").should("contain.text", testCase);
+		});
 	});
 });

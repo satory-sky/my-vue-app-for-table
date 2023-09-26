@@ -5,21 +5,35 @@
   </div>
 
   <div>
-    <b-table striped hover :items="tableData"></b-table>
+    <table id="simple-client-reports">
+      <thead>
+      <tr>
+        <th>Col A</th>
+        <th>Col B</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Val X</td>
+        <td>ValY</td>
+      </tr>
+      <tr>
+        <td>Val A</td>
+        <td>Val_B</td>
+      </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
-import { BTable } from 'bootstrap-vue'
-
 export default {
   components: {
-    BTable
   },
   data() {
     return {
-      title: 'Hello, Vue 3 table component',
-      message: 'This is a Vue 3 table component',
+      title: 'Hello, Vue 3 simple table component',
+      message: 'This is a Vue 3 simple table component',
       tableData: [
         { id: 1, name: 'Item 1', price: 10 },
         { id: 2, name: 'Item 2', price: 20 },
@@ -27,14 +41,10 @@ export default {
       ],
     };
   },
-  compatConfig: { MODE: 3 }
 };
 </script>
 
 <style scoped>
-@import 'bootstrap/dist/css/bootstrap.css';
-@import 'bootstrap-vue/dist/bootstrap-vue.css';
-
 h3 {
   margin: 40px 0 0;
 }

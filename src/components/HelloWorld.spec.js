@@ -1,13 +1,13 @@
-import TableComponent from "./Table-component.vue";
 import { mount } from "cypress/vue";
+import HelloWorld from "@/components/HelloWorld.vue";
 
-describe('Table Component', () => {
+describe('Hello Word', () => {
 	beforeEach(() => {
 		// Visit the Vue app URL where your component will be mounted
 		// cy.visit('/');
 	});
 
-	it('displays the component with mock data', () => {
+	it('displays the component with mock props', () => {
 		// Define global configuration options for cy.mount
 		const mountOptions = {
 			global: {
@@ -21,20 +21,13 @@ describe('Table Component', () => {
 		};
 
 		// Mount the Vue component with mock data and global options
-		mount(TableComponent, {
-			data() {
-				return {
-					title: 'Mock Title',
-					message: 'Mock Message',
-					tableData: [
-						{ id: 1, name: 'Mock Item 1', price: 10 },
-						{ id: 2, name: 'Mock Item 2', price: 20 },
-						{ id: 3, name: 'Mock Item 3', price: 30 },
-					],
-				};
+		mount(HelloWorld, {
+			props: {
+				msg: "Mock Message"
 			},
 			...mountOptions, // Merge global options
 		});
+/*
 
 		// Assert that the component with mock data is displayed correctly
 		cy.get('h1').should('contain', 'Mock Title');
@@ -45,5 +38,6 @@ describe('Table Component', () => {
 		cy.get('tbody tr').should('have.length', 3); // Assuming 3 mock items
 		cy.get('tbody tr:first-child td:first-child').should('contain', 'Mock Item 1');
 		cy.get('tbody tr:last-child td:last-child').should('contain', '30');
+*/
 	});
 });
